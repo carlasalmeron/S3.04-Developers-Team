@@ -45,12 +45,14 @@ public class EventSqlDAO implements EventRepository {
              ResultSet rs = stmt.executeQuery(sql)) {
 
             while (rs.next()) {
-                Event event = new Event(
-                        rs.getString("title"),
-                        rs.getString("location"),
-                        rs.getTimestamp("start_time").toLocalDateTime(),
-                        rs.getTimestamp("end_time").toLocalDateTime()
-                );
+                Event event = new Event.Builder()
+                        .id(rs.getInt("id"))
+                        .title(rs.getString("title"))
+                        .location(rs.getString("location"))
+                        .startTime(rs.getTimestamp("start_time").toLocalDateTime())
+                        .endTime(rs.getTimestamp("end_time").toLocalDateTime())
+                        .build();
+
                 events.add(event);
             }
         } catch (SQLException e) {

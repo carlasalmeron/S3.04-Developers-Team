@@ -4,20 +4,21 @@ import java.time.LocalDateTime;
 
 public class Event {
 
-    private String id;
+    private int id;
     private String title;
     private String location;
     private LocalDateTime startTime;
     private LocalDateTime endTime;
 
-    public Event(String title, String location, LocalDateTime startTime, LocalDateTime endTime) {
-        this.title = title;
-        this.location = location;
-        this.startTime = startTime;
-        this.endTime = endTime;
+    private Event(Builder builder) {
+        this.id = builder.id;
+        this.title = builder.title;
+        this.location = builder.location;
+        this.startTime = builder.startTime;
+        this.endTime = builder.endTime;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
@@ -37,23 +38,56 @@ public class Event {
         return endTime;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    public static class Builder {
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
+        private int id;
+        private String title;
+        private String location;
+        private LocalDateTime startTime;
+        private LocalDateTime endTime;
 
-    public void setStartTime(LocalDateTime startTime) {
-        this.startTime = startTime;
-    }
+        public Builder id(int id) {
+            this.id = id;
+            return this;
+        }
 
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
+        public Builder title(String title) {
+            this.title = title;
+            return this;
+        }
+
+        public Builder location(String location) {
+            this.location = location;
+            return this;
+        }
+
+        public Builder startTime(LocalDateTime startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+
+        public Builder endTime(LocalDateTime endTime) {
+            this.endTime = endTime;
+            return this;
+        }
+
+        public Event build() {
+
+            if (title == null || title.isBlank()) {
+                throw new IllegalArgumentException("The title cannot be empty");
+            }
+            if (startTime == null || endTime == null) {
+                throw new IllegalArgumentException("Dates are needed");
+            }
+            if (endTime.isBefore(startTime)) {
+                throw new IllegalArgumentException("Finish date cannot be before end date.");
+            }
+
+            return new Event(this);
+        }
     }
 }

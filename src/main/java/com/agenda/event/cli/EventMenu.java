@@ -6,6 +6,7 @@ import com.agenda.event.service.EventService;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 public class EventMenu {
     private final EventService eventService;
@@ -52,22 +53,41 @@ public class EventMenu {
             LocalDateTime start = LocalDateTime.parse(startStr, formatter);
             LocalDateTime end = LocalDateTime.parse(endStr, formatter);
 
-            Event newEvent = new Event(title, location, start, end);
+            Event newEvent = new Event.Builder()
+                    .title(title)
+                    .location(location)
+                    .startTime(start)
+                    .endTime(end)
+                    .build();
+
             eventService.createEvent(newEvent);
+            System.out.println("✅ Event created successfully!");
+
+        } catch (java.time.format.DateTimeParseException e) {
+            System.out.println("❌ Error: Invalid date format. Please use yyyy-MM-dd HH:mm");
+        } catch (IllegalArgumentException e) {
+            System.out.println("❌ Validation Error: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Error: Incorrect date format.");
+            System.out.println("❌ An unexpected error occurred: " + e.getMessage());
         }
     }
 
     public void listEvents() {
         System.out.println("----EVENTS LIST----");
-        var events = eventService.getAllEvents();
+        List<Event> events = eventService.getAllEvents();
 
         if (events.isEmpty()) {
             System.out.println("There are no events registered.");
         } else {
+            System.out.printf("%-4s | %-20s | %-15s | %-16s%n", "ID", "TITLE", "LOCATION", "START TIME");
+            System.out.println("------------------------------------------------------------------");
+
             for (Event e : events) {
-                System.out.println(e.getId() + " | " + e.getTitle() + " | " + e.getLocation() + " | " + e.getStartTime());
+                System.out.printf("%-4d | %-20s | %-15s | %-16s%n",
+                        e.getId(),
+                        e.getTitle(),
+                        e.getLocation(),
+                        e.getStartTime().format(formatter));
             }
         }
     }

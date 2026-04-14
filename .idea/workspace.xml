@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="133fb2da-d8a7-462e-885a-e1d0f841e0a7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenda/application/AgendaApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenda/application/AgendaApp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenda/application/menu/MainMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenda/application/menu/MainMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenda/infrastructure/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenda/event/cli/EventMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenda/event/cli/EventMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenda/event/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenda/event/model/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenda/infrastructure/sql/dao/EventSqlDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenda/infrastructure/sql/dao/EventSqlDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +38,7 @@
   }
 }]]></component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -58,7 +56,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "event",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Carla/IdeaProjects/Sprint 3/T4 - Developers Team/S3.04-Developers-Team",
