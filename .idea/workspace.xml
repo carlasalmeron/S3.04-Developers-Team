@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="133fb2da-d8a7-462e-885a-e1d0f841e0a7" name="Changes" comment="" />
+    <list default="true" id="133fb2da-d8a7-462e-885a-e1d0f841e0a7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenda/event/cli/EventMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenda/event/cli/EventMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenda/event/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenda/event/model/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/agenda/infrastructure/sql/dao/EventSqlDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/agenda/infrastructure/sql/dao/EventSqlDAO.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -16,12 +31,15 @@
     &quot;assignee&quot;: &quot;MarcCasadevall&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/carlasalmeron/S3.04-Developers-Team.git&quot;,
-    &quot;accountId&quot;: &quot;6c99ea22-321c-456c-9bb2-97a35b30e4cf&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/carlasalmeron/S3.04-Developers-Team.git",
+    "accountId": "2ffcb859-1a75-40b5-bbf1-d814ec7b4492"
   }
-}</component>
+}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -32,24 +50,38 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.AgendaApp.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "dev",
+    "git-widget-placeholder": "event",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Marc/IdeaProjects/S3.04-Developers-Team",
+    "last_opened_file_path": "C:/Users/Carla/IdeaProjects/Sprint 3/T4 - Developers Team/S3.04-Developers-Team",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-30f59d01ecdd-cffe25b9f5b3-intellij.indexing.shared.core-IU-253.28294.334" />
-      </set>
-    </attachedChunks>
+  <component name="RunManager">
+    <configuration name="AgendaApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.agenda.application.AgendaApp" />
+      <module name="S3.04-Developers-Team" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.agenda.application.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AgendaApp" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -60,5 +92,28 @@
       <updated>1775645391813</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

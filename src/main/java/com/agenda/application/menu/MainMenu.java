@@ -1,5 +1,9 @@
 package com.agenda.application.menu;
 
+import com.agenda.event.cli.EventMenu;
+import com.agenda.event.service.EventService;
+import com.agenda.infrastructure.sql.dao.EventSqlDAO;
+
 import java.util.Scanner;
 
 public class MainMenu {
@@ -28,6 +32,9 @@ public class MainMenu {
                     break;
                 case 3:
                     System.out.println("-> Entering the EVENTS module...");
+                    EventSqlDAO dao = new EventSqlDAO();
+                    EventService service = new EventService(dao);
+                    new EventMenu(service).showMenu();
                     break;
                 case 4:
                     System.out.println("Exiting...");
