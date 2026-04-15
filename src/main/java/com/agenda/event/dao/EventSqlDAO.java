@@ -1,9 +1,8 @@
-package com.agenda.infrastructure.sql.dao;
+package com.agenda.event.dao;
 
 import com.agenda.event.model.Event;
 import com.agenda.event.repository.EventRepository;
 import com.agenda.infrastructure.sql.MySQLConnection;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,6 +61,26 @@ public class EventSqlDAO implements EventRepository {
     }
 
     @Override
-    public void delete(String id) {
+    public void delete(int id) {
+        String sql = "DELETE FROM events WHERE id = ?";
+
+        try (Connection conn = MySQLConnection.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setInt(1, id);
+
+            int rowsDeleted = pstmt.executeUpdate();
+
+            if (rowsDeleted > 0) {
+                System.out.println("✅ Event successfully deleted from the database!");
+            } else {
+                System.out.println("No events were found with the ID: " + id);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("❌ Error deleting the event: " + e.getMessage());
+            e.printStackTrace();
+        }
+
     }
 }

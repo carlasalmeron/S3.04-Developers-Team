@@ -25,4 +25,7 @@ public class EventService {
         return repository.findAll();
     }
 
+    public void deleteEvent(int id) {
+        repository.delete(id);
+    }
 }

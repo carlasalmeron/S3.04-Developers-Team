@@ -7,6 +7,6 @@ public interface EventRepository {
 
     void save(Event event);
     List<Event> findAll();
-    void delete(String id);
+    void delete(int id);
 
 }
