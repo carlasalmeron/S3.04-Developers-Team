@@ -10,12 +10,19 @@ public class MySQLConnection {
     private static final String USER = "DevelopersTeam";
     private static final String PASSWORD = "1234";
 
-    public static Connection getConnection() throws SQLException {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection(URL, USER, PASSWORD);
-        } catch (ClassNotFoundException e) {
-            throw new SQLException("No se encontró el driver de MySQL: " + e.getMessage());
+    private static Connection connection = null;
+
+    private MySQLConnection() {}
+
+    public static synchronized Connection getConnection() throws SQLException {
+        if (connection == null || connection.isClosed()) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection(URL, USER, PASSWORD);
+            } catch (ClassNotFoundException e) {
+                throw new SQLException("The MySQL driver was not found: " + e.getMessage());
+            }
         }
+        return connection;
     }
 }
